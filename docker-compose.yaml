@@ -1,0 +1,14 @@
+version: '3'
+ 
+services:
+  web:
+    build: .
+    volumes:
+      - ./src/app:/usr/src/app
+      - node_modules_volume:/usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    entrypoint: "/bin/sh -c 'npm install && yarn start'"
+ 
+volumes:
+  node_modules_volume:

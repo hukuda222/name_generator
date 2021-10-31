@@ -32,34 +32,35 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.flex{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
+.flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
 }
 
-.Input{
-    resize: none;
-    font-size:40pt;
+.Input {
+  resize: none;
+  font-size: 40pt;
 }
 
-p.left{
-   margin-left:-20%;
+p.left {
+  margin-left: -20%;
 }
 
-.Button{
-   margin-right:30%;
-   float: right;
-   font-size:25pt;
+.Button {
+  margin-right: 30%;
+  float: right;
+  font-size: 25pt;
 }
 
-p.output{
-   font-size:35pt
+p.output {
+  font-size: 35pt
 }
