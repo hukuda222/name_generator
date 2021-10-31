@@ -1,4 +1,4 @@
-亜
+const allchars = `亜
 哀
 挨
 愛
@@ -2133,4 +2133,6 @@
 惑
 枠
 湾
-腕
+腕`;
+
+export default allchars;
