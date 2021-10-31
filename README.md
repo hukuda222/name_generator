@@ -1,5 +1,13 @@
 # name_generator
-マイナンバーから人名を生成する
+マイナンバーから人名を生成します。
 
-常用漢字一覧は下記のリポジトリから入手しました。
-https://github.com/rime-aca/character_set
+## 実行方法
+下記のコマンドを実行すると、http://localhost:3000 でページが見られるようになります。
+```
+docker-compose build
+docker-compose up 
+```
+
+
+## 利用素材
+常用漢字一覧は https://github.com/rime-aca/character_set から入手しました。
