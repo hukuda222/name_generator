@@ -3,13 +3,15 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    float: left;
+    margin-left: 14%;
   }
 }
 
@@ -49,10 +51,12 @@
 .Input {
   resize: none;
   font-size: 40pt;
+  clear: both;
 }
 
 p.left {
   margin-left: -20%;
+  clear: both;
 }
 
 .Button {
@@ -62,5 +66,15 @@ p.left {
 }
 
 p.output {
-  font-size: 35pt
+  font-size: 35pt;
+}
+p.error {
+  font-size: 10pt;
+  color:red;
+}
+
+.abst{
+  margin-right: 15%;
+  text-align: left; 
+  float: right;
 }
