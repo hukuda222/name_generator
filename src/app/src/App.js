@@ -6,7 +6,7 @@ import allJukugos from './jukugos.js';
 import sha512 from 'js-sha512';
 import Select from 'react-select'
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Icon, Header } from 'semantic-ui-react'
+import { Button, Icon} from 'semantic-ui-react'
 
 class App extends React.Component {
   constructor(props) {
@@ -90,27 +90,32 @@ class App extends React.Component {
 
     const name1 = this.allChars[(index + 2) % this.allChars.length];
     let name2 = this.allChars[(index * 2 + 22) % this.allChars.length];
+    let count = 0
     while (this.allJukugos.has(name1 + name2) || name1 === name2) {
-      name2 = (name2 + 1) % this.allChars.lenght;
+      name2 = this.allChars[(index * 2 + 22 + count) % this.allChars.length];
+      count += 1
     }
     let name3 = this.allChars[(index * 3 + 222) % this.allChars.length];
     while (name1 === name3 || name2 === name3) {
-      name3 = (name3 + 1) % this.allChars.lenght;
+      name3 = this.allChars[(index * 3 + 222 + count) % this.allChars.length];
+      count += 1
     }
     let name4 = this.allChars[(index * 4 + 2222) % this.allChars.length];
-    while (this.allJukugos.has(name1 + name4) || name1 === name4 || name2 === name4 || name3 === name4) {
-      name4 = (name4 + 1) % this.allChars.lenght;
+    
+    while (this.allJukugos.has(name3 + name4) || name1 === name4 || name2 === name4 || name3 === name4) {
+      name4 = this.allChars[(index * 4 + 2222 + count) % this.allChars.length];
+      count += 1
     }
     this.setState({ valid: true });
     this.setState({ name: "あなたの名前は、" + name1 + name2 + " " + name3 + name4 });
   }
 
   tweet() {
+    const result = "新しい名前を生成しよう" + " https://hukuda222.github.io/name_generator/";
+    window.location.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(result);
     this.setState({ type: "none" });
     this.setState({ valid: false });
     this.setState({ inputNumber: "" });
-    const result = "新しい名前を生成しよう" + " https://hukuda222.github.io/name_generator/";
-    window.location.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(result);
   }
 
   render() {
