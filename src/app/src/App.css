@@ -3,26 +3,14 @@
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 15vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    float: left;
-    margin-left: 14%;
-  }
+  margin-left: 5%;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #222222;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -40,41 +28,66 @@
   }
 }
 
-.flex {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+.title{
+  font-size: 30pt;
+  margin-left: 5%;
+  margin-top: 2%;
 }
 
-.Input {
+.input_raw {
   resize: none;
-  font-size: 40pt;
+  font-size: 30pt;
   clear: both;
 }
 
-p.left {
-  margin-left: -20%;
+.input_sha512 {
+  resize: none;
+  font-size: 15pt;
   clear: both;
 }
 
-.Button {
-  margin-right: 30%;
-  float: right;
-  font-size: 25pt;
+
+p.guide_input {
+  font-size: 15pt;
+  clear: both;
+}
+
+.button {
+  margin-left: 30%;
 }
 
 p.output {
-  font-size: 35pt;
+  font-size: 40pt;
+  clear: both;
 }
 p.error {
-  font-size: 10pt;
+  font-size: 20pt;
   color:red;
+  clear: both;
 }
 
 .abst{
-  margin-right: 15%;
   text-align: left; 
-  float: right;
+  clear: both;
+  margin-left: 20%;
+  font-size: 12pt;
+}
+
+.select{
+  font-size: 15pt;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150pt;
+}
+
+.guide_type {
+  font-size: 15pt;
+  margin-left: -30%;
+  margin-right: auto;
+  float: left;
+}
+
+
+.tweet_error {
+  visibility: hidden;
 }

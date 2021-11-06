@@ -1,4 +1,4 @@
-const allchars = `亜
+const allChars = `亜
 哀
 挨
 愛
@@ -2135,4 +2135,4 @@ const allchars = `亜
 湾
 腕`;
 
-export default allchars;
+export default allChars;
