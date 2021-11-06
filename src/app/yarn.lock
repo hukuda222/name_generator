@@ -2376,7 +2376,7 @@
   "resolved" "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz"
   "version" "1.0.1"
 
-"async@^2.0.1", "async@^2.6.2":
+"async@^2.6.2":
   "integrity" "sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg=="
   "resolved" "https://registry.npmjs.org/async/-/async-2.6.3.tgz"
   "version" "2.6.3"
@@ -4203,11 +4203,6 @@
   "integrity" "sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz"
   "version" "8.2.0"
-
-"doublearray@0.0.2":
-  "integrity" "sha1-Yxhv6NNEEydtNiH2qg7F954ifvk="
-  "resolved" "https://registry.npmjs.org/doublearray/-/doublearray-0.0.2.tgz"
-  "version" "0.0.2"
 
 "duplexer@^0.1.1":
   "integrity" "sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg=="
@@ -6843,15 +6838,6 @@
   "integrity" "sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w=="
   "resolved" "https://registry.npmjs.org/kleur/-/kleur-3.0.3.tgz"
   "version" "3.0.3"
-
-"kuromoji@^0.1.2":
-  "integrity" "sha512-V0dUf+C2LpcPEXhoHLMAop/bOht16Dyr+mDiIE39yX3vqau7p80De/koFqpiTcL1zzdZlc3xuHZ8u5gjYRfFaQ=="
-  "resolved" "https://registry.npmjs.org/kuromoji/-/kuromoji-0.1.2.tgz"
-  "version" "0.1.2"
-  dependencies:
-    "async" "^2.0.1"
-    "doublearray" "0.0.2"
-    "zlibjs" "^0.3.1"
 
 "last-call-webpack-plugin@^3.0.0":
   "integrity" "sha512-7KI2l2GIZa9p2spzPIVZBYyNKkN+e/SQPpnjlTiPhdbDW3F86tdKKELxKpzJ5sgU19wQWsACULZmpTPYHeWO5w=="
@@ -10596,6 +10582,11 @@
   "resolved" "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz"
   "version" "0.3.0"
 
+"tiny-segmenter@^0.2.0":
+  "integrity" "sha1-T5ERXvqpDR+YtIFiOw3MgwqeGmk="
+  "resolved" "https://registry.npmjs.org/tiny-segmenter/-/tiny-segmenter-0.2.0.tgz"
+  "version" "0.2.0"
+
 "tmp@^0.0.33":
   "integrity" "sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw=="
   "resolved" "https://registry.npmjs.org/tmp/-/tmp-0.0.33.tgz"
@@ -11485,8 +11476,3 @@
     "which-module" "^2.0.0"
     "y18n" "^4.0.0"
     "yargs-parser" "^13.1.2"
-
-"zlibjs@^0.3.1":
-  "integrity" "sha1-UBl+2yihxCymWcyLTmqd3W1ERVQ="
-  "resolved" "https://registry.npmjs.org/zlibjs/-/zlibjs-0.3.1.tgz"
-  "version" "0.3.1"
