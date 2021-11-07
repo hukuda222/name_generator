@@ -6,7 +6,7 @@ import allJukugos from './jukugos.js';
 import sha512 from 'js-sha512';
 import Select from 'react-select'
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Icon} from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 
 class App extends React.Component {
   constructor(props) {
@@ -43,8 +43,8 @@ class App extends React.Component {
 
   handleTypeChange(event) {
     this.setState({ type: event.value });
-    this.setState({ valid: false });
     this.setState({ inputNumber: "" });
+    this.setState({ name: "" });
     if (event.value === "raw") {
       this.setState({
         textarea: {
@@ -86,25 +86,24 @@ class App extends React.Component {
       return;
     }
 
-    const index = parseInt(this.state.type === "raw" ? sha512(this.state.inputNumber, 10) : this.state.inputNumber, 16);
+    const index = parseInt(this.state.type === "raw" ? sha512(this.state.inputNumber, 10) : this.state.inputNumber, 16) % this.allChars.length;
 
-    const name1 = this.allChars[(index + 2) % this.allChars.length];
-    let name2 = this.allChars[(index * 2 + 22) % this.allChars.length];
-    let count = 0
+    const name1 = this.allChars[index % this.allChars.length];
+    let name2 = this.allChars[(index * 2) % this.allChars.length];
+    let count = 0;
     while (this.allJukugos.has(name1 + name2) || name1 === name2) {
-      name2 = this.allChars[(index * 2 + 22 + count) % this.allChars.length];
-      count += 1
+      name2 = this.allChars[(index * 2 + count) % this.allChars.length];
+      count += 1;
     }
-    let name3 = this.allChars[(index * 3 + 222) % this.allChars.length];
+    let name3 = this.allChars[(index * 3) % this.allChars.length];
     while (name1 === name3 || name2 === name3) {
-      name3 = this.allChars[(index * 3 + 222 + count) % this.allChars.length];
-      count += 1
+      name3 = this.allChars[(index * 3 + count) % this.allChars.length];
+      count += 1;
     }
-    let name4 = this.allChars[(index * 4 + 2222) % this.allChars.length];
-    
+    let name4 = this.allChars[(index * 4) % this.allChars.length];
     while (this.allJukugos.has(name3 + name4) || name1 === name4 || name2 === name4 || name3 === name4) {
-      name4 = this.allChars[(index * 4 + 2222 + count) % this.allChars.length];
-      count += 1
+      name4 = this.allChars[(index * 4 + count) % this.allChars.length];
+      count += 1;
     }
     this.setState({ valid: true });
     this.setState({ name: "あなたの名前は、" + name1 + name2 + " " + name3 + name4 });
@@ -113,7 +112,7 @@ class App extends React.Component {
   tweet() {
     this.setState({ type: "none" });
     this.setState({ inputNumber: "" });
-    const result = "新しい名前を生成しよう" + " https://hukuda222.github.io/name_generator/";
+    const result = "新しい名前を生成しよう https://hukuda222.github.io/name_generator/";
     window.location.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(result);
   }
 
@@ -124,13 +123,13 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p className="title">Perfect Name Generator</p>
         </header>
-        <br/>
+        <br />
         <p className="abst">今の氏名システムって非効率的だと思いませんか？<br /><br />
-              多くのエンジニアが珍しい名前を扱うシステムの構築に苦労していることだと思います。<br />
-              そこで日本国民に一意に割り振られるマイナンバーから氏名を生成するサービスを作りました。<br />
-              常用漢字2136字から、2文字の名字と2文字の名前を生成します。<br /><br />
-              短い名前や長い名前、旧字体の扱いに悩むこともありませんし、姓名分割は2文字で区切れば終わります。<br />
-              日常生活に登場する2文字の単語を出さないようにしているため、氏名抽出システムの精度向上にも貢献します。</p>
+          多くのエンジニアが珍しい名前を扱うシステムの構築に苦労していることだと思います。<br />
+          そこで日本国民に一意に割り振られるマイナンバーから氏名を生成するサービスを作りました。<br />
+          常用漢字2136字から、2文字の名字と2文字の名前を生成します。<br /><br />
+          短い名前や長い名前、旧字体の扱いに悩むこともありませんし、姓名分割は2文字で区切れば終わります。<br />
+          日常生活に登場する2文字の単語を出さないようにしているため、氏名抽出システムの精度向上にも貢献します。</p>
         <div>
           <br />
           <p className="guide_input">マイナンバーを入力してください</p>
@@ -138,7 +137,7 @@ class App extends React.Component {
             onChange={this.handleTypeChange} className="select" />
           <br />
           <textarea value={this.state.inputNumber} onChange={this.handleInputChange}
-            cols={this.state.textarea.cols} rows={this.state.textarea.rows} maxlength={this.state.textarea.limit}
+            cols={this.state.textarea.cols} rows={this.state.textarea.rows} maxLength={this.state.textarea.limit}
             className={`${this.state.type === "raw" ? "input_raw" : "input_sha512"}`} />
         </div>
         <div className="button">
