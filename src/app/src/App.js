@@ -96,7 +96,7 @@ class App extends React.Component {
       count += 1;
     }
     let name3 = this.allChars[(index * 3) % this.allChars.length];
-    while (name1 === name3 || name2 === name3) {
+    while (this.allJukugos.has(name2 + name3) || name1 === name3 || name2 === name3) {
       name3 = this.allChars[(index * 3 + count) % this.allChars.length];
       count += 1;
     }
