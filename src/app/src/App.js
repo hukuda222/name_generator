@@ -111,11 +111,10 @@ class App extends React.Component {
   }
 
   tweet() {
+    this.setState({ type: "none" });
+    this.setState({ inputNumber: "" });
     const result = "新しい名前を生成しよう" + " https://hukuda222.github.io/name_generator/";
     window.location.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(result);
-    this.setState({ type: "none" });
-    this.setState({ valid: false });
-    this.setState({ inputNumber: "" });
   }
 
   render() {
